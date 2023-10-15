@@ -239,6 +239,7 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Node.js](https://camo.githubusercontent.com/ab61fce6586c27e04d8ac35d0a77a20b78eb57de63ac2243353f23d3752b1fc3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d3333393933333f7374796c653d666f722d7468652d6261646765266c6f676f3d4e6f64652e6a73266c6f676f436f6c6f723d7768697465)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![IntelliJ](https://camo.githubusercontent.com/d479352761a86806b779129f4be8909d1c8c1fb1e2805bbd86cacd276f831cfa/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f496e74656c6c696a5f494445412d3337373641423f7374796c653d666f722d7468652d6261646765266c6f676f3d496e74656c6c696a49444541266c6f676f436f6c6f723d7768697465)
 ![Android Studio](https://img.shields.io/badge/Android_Studio-%232022a.svg?style=for-the-badge&logo=androidstudio&logoColor=white)
@@ -306,6 +307,6 @@
 | [<img src="Docs/image/김석주.png" width="80px;" height="80px" alt=""/>](https://github.com/seokJKIM) | [<img src="Docs/image/김수현.png" width="80px;" height="80px" alt=""/>](https://github.com/ppsrac) | [<img src="Docs/image/곽민규.png" width="80px;" height="80px" alt=""/>](https://github.com/RookMG) | [<img src="Docs/image/금세현.png" width="80px;" height="80px" alt=""/>](https://github.com/shkum0330) | [<img src="Docs/image/왕준영.png" width="80px;" height="80px" alt=""/>](https://github.com/wjy35) | [<img src="Docs/image/윤태영.png" width="80px;" height="80px" alt=""/>](https://github.com/yyytae0) |
 |                                       Leader<br/>Back-end<br/>                                       |                                           Back-end<br/>                                            |                                    Back-end<br/>Front-end<br/>                                     |                                             Back-end<br/>                                             |                                        Back-end<br/>Infra                                         |                                           Front-end<br/>                                            |
 
-|
+
 
 <br/>
