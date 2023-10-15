@@ -1,47 +1,59 @@
-# 🧊 신나냉
+# 🧊 신선 나눔 냉장고, 신나냉
 
-<img src="Docs/image/login.png" width="80%">
+<img src="Docs/image/main.PNG" width="80%">
+
+- 냉장고 식자재 관리 및 나눔 서비스
+- [apk 다운로드](https://1drv.ms/u/s!AkrJpxi-ZmutiPNutUjyN42GvDJ0_A?e=c2RFwU)
 
 # 📃목차
 
 1. [프로젝트소개](#프로젝트-소개)
 2. [개발기간](#개발-기간)
 3. [설계](#설계)
-4. [주요기능(캡쳐)](#주요-기능)
-5. [시연화면](#시연-화면)
+4. [주요기능](#주요-기능)
+5. [시연](#시연-화면)
 6. [개발환경](#개발-환경)
 7. [프로젝트 회고](#프로젝트-회고)
 8. [팀원소개](#멤버-구성)
 
-# 💡프로젝트 소개
+# 💡 프로젝트 소개
 
 ### 서비스 소개
 
-- 화상채팅을 통해 비대면으로 게임을 진행하고, 웃은 횟수에 따라 점수를 부여해 서로 경쟁하는 게임 플랫폼입니다.
+- 식재료의 소비기한을 추적해주고, 소비기한이 다가오면 사용처를 제공해, 최종적으로 버려지는 식재료를 줄일 수 있도록 도와주는 식재료 관리 어플
 
 ### 서비스 특징
 
-- 웹캠과 WebRTC기술을 활용해 비대면으로 여러명이 실시간으로 게임에 참여 가능
+- 기존의 식재료 관리 서비스들의 장점들을 모으고 단점을 개선하여 하나의 서비스로 만듬
 
-- 사용자의 얼굴 변화를 체크해 웃음 횟수를 체크하고 이를 결과에 반영함
+- 식재료 등록에 편의성을 위해 영수증 촬영으로 구매한 목록을 한번에 추가하거나, 음성을 통해 간편하게 등록할 수 있음
+
+- 가지고 있는 식재료를 기반으로 여러가지 레시피를 추천함
+
+- 여러명이 하나의 냉장고를 공유하여 관리할 수 있음
 
 ### 기획 배경
 
-- 최근 유튜브에서 많은 인기를 얻고 있는 메타코미디 클럽, 유병재의 생일파티, 조충현의 웃으면 강퇴 등의 컨텐츠 들의 공통점인 `웃음참기`에 초점을 맞춤
+#### 1. 기존 냉장고 관리 어플리케이션의 한계
 
-- 웃음을 참는 것으로 재미를 얻을 수 있다는 속성 반영
+- 기존의 냉장고 관리 어플리케이션은 식재료 등록이 번거롭고, 적절한 활용처를 제공해주지 않음
 
-- 간단하게 즐길 수 있는 게임에 이를 적용
+#### 2. 여러 명이 한 냉장고를 사용할 때의 어려움
+
+- 가구 구성원끼리 냉장고를 공유하는 경우 정확한 식재료 파악이 어려움
+
+#### 3. 소비 패턴의 변화와 그에 따른 식재료 폐기 증가
+
+- 가구 구성원 수가 줄어들고 배달 문화가 발달하면서, 소비기한 내에 먹지 못하고 폐기되는 식재료의 양이 증가함
+  <br>
+
+# 📆 개발 기간
+
+- 23.08.21일 - 23.10.06일
 
 <br>
 
-# 📆개발 기간
-
-- 23.07.10일 - 23.08.18일
-
-<br>
-
-# 💡설계
+# 💡 설계
 
 ### 1. ERD
 
@@ -49,298 +61,206 @@
 
 ### 2. 시스템 아키텍처
 
-<img src="Docs/image/System Architecture.png" width="80%">
+<img src="Docs/image/Architecture.png" width="80%">
 
 <br>
 
 # ✨주요 기능
 
-### 1. 웃음 참기 게임
+### 1. 식재료 관리
 
-- 메인화면에서 카메라, 마이크 설정을 통해 시작하기 버튼 활성화
+- 식재료를 등록해 소비기한을 추적함
 
-- 시작하기 버튼을 통한 게임 매칭 실행
+- 남은 소비기한을 색깔별로 구분할 수 있음
 
-- 5인 매칭 성공 시 게임룸으로 이동
+- 남은 기간이 7일 미만인 식재료가 있을 경우 알림을 통해 사용할 수 있도록 도와줌
 
-- 게임 룰
+### 2. 레시피 추천
 
-  1. 미션 선택 후 해당 미션에 따른 개그 진행
+- 식재료 기반으로 레시피 추천
 
-  2. 웃을 시 컴포넌트에 이펙트가 발생하며 카운트가 늘어남
+- 필수, 제외 재료 등 검색 필터 설정
 
-  3. 발표자는 카운트 되지 않음
+- 필요한 식재료 갯수와 보유하고 있는 식재료의 갯수를 표시하여 선택에 도움을 줌
 
-  4. 입을 가려 인식이 되지 않으면 5초에 1번씩 카운트가 올라감
+### 3. 식재료 나눔
 
-  5. 화면공유를 통해 영상 매체 활용 가능, 채팅 가능
+- 소비가 어려운 식재료는 나눔을 통해 버리는 식재료를 줄일 수 있음
 
-  6. 결과가 끝나면 카운트 된 웃음 횟수별로 순위 지정 및 점수 반영
+- 지역별로 나눔글 관리 가능
 
-### 2. OpenVidu를 화상 통화 & 채팅
+- 채팅을 통해 장소, 시간을 맞춘 후 수락, 거절 선택 가능
 
-- 게임을 진행하기 위해 매칭이 잡힌 유저끼리 화상 채팅을 연결함
-- 채팅을 통해 서로 소통할 수 있음
+### 4. 공유 관리
 
-### 3. FaceAPI를 활용한 웃음 캐치
+- 여러 명이서 동시에 하나의 냉장고를 관리
 
-- 화면의 변화를 FaceAPI를 활용해 웃은 횟수를 체크해서 최종 순위에 반영함
-- 얼굴이 인식되지 않는 경우 5초를 기준으로 카운트가 1회씩 증가함
-- 얼굴을 가리고 웃거나 화면을 이탈하는 경우를 방지함
-
-### 4. 도감
-
-- 게임을 통해 얻은 포인트로 프로필사진, 테두리, 이름표를 구매할 수 있음
-- 구매한 아이템을 확인 할 수 있고, 아이템을 교체할 수 있음
-
-### 5. 랭킹
-
-- 레이팅을 통해 유저들의 랭킹을 확인할 수 있음
+- 회원 가입 시 집 코드를 공유하여 등록 가능
 
 <br>
 
-# 🔫시연 화면
+# 🔫시연
 
-## **기본 UI**
+### 시연 영상
 
-#### 회원가입
+### 로그인
 
-![signup_1](/Docs/gif/signup_email.gif)
-![email](/Docs/gif/signup_email_check.gif)
-![signup_2](/Docs/gif/signup_password.gif)
-![signpu_nickname_check](/Docs/gif/signup_nickname_check.gif)
+<img src="Docs/image/home.jpg" alt="home" width="300" />
 
-#### 로그인
+- 카카오톡 간편 회원가입, 로그인 구현
 
-![login](/Docs/gif/login.gif)
+### 홈
 
-#### 로그아웃
+<img src="Docs/image/메인화면.jpg" alt="main" width="300" />
 
-![logout](/Docs/gif/logout.gif)
+- 레시피 추천 목록을 볼 수 있음
 
-#### 홈
+- 소비기한이 7일 미만인 식재료들 확인 가능
 
-#### 공지
+### 냉장고
 
-![notice](/Docs/gif/notice_user.gif)
+<img src="Docs/image/냉장고.jpg" alt="main" width="300" />
 
-#### 도감
+<img src="Docs/image/소비기한 표시.jpg" alt="main" width="300" />
 
-![collection](/Docs/gif/collection_no_money.gif)
-![collection_list](/Docs/gif/collection_image.gif)
-![collection_list](/Docs/gif/collection_fream.gif)
+- 보유하고 있는 식재료를 냉동, 냉장, 상온에 맞춰 표시해줌
 
-#### 랭크
+- 남은 소비기한에 따라 색깔별로 표시해줌
+  - 검정: 소비기한이 남지 않음
+  - 빨강: 남은 소비기한 3일 미만
+  - 노랑: 남은 소비기한 7일 미만
+  - 초록: 남은 소비기한 7일 이상
 
-![rank](/Docs/gif/rank.gif)
+### 식재료 등록
 
-## **게임 UI**
+<img src="Docs/image/재료 추가.jpg" alt="main" width="300" />
+<img src="Docs/image/재료 추가 자동완성.jpg" alt="main" width="300" />
 
-#### 게임 실행
+- 식재료 등록 시 텍스트를 입력하면 관리할 수 있는 식재료들의 목록을 자동완성할 수 있음
 
-1. 매칭
+### 사진등록
 
-![game_matching](/Docs/gif/game_matching.gif)
+<img src="Docs/image/ocr.jpg" alt="main" width="300" />
 
-2. 매칭 수락
+- 사용자의 편의성을 증가시키기 위해 영수증 사진을 등록하면 해당 영수증에 있는 텍스트를 모두 읽어옴
 
-![game_accept](/Docs/gif/game_accept.gif)
+- DB에 있는 식재료들과 비교하여 등록할 수 있는 식재료를 반환해줌
 
-3. 미션 선택
+### 음성 등록
 
-![game_choice](/Docs/gif/game_choice.gif)
+<img src="Docs/image/stt.jpg" alt="main" width="300" />
 
-4. 게임 시작
+- 사용자의 편의성을 증가시키기 위해 음성을 통해 식재료를 등록할 수 있음
 
-![game_first](/Docs/gif/game_first.gif)
+- 녹음을 시작한뒤 구매한 목록을 말하면, 해당 음성을 텍스트로 변환하고 그 중 DB에 있는 식재료와 비교하여 등록할 수 있는 식재료를 반환해줌
 
-5. 채팅
+### 보관방법 설정
 
-![game_chating](/Docs/gif/game_chating.gif)
+<img src="Docs/image/보관방법 설정.jpg" alt="main" width="300" />
 
-6. 다음 순서 대기
+- 등록하려는 식재료들을 냉장, 냉동, 실온에 맞춰 자신이 보관할 장소에 분류할 수 있음
 
-![game_wait](/Docs/gif/game_wait.gif)
+### 소비기한 설정
 
-7. 게임 결과
+<img src="Docs/image/소비기한 설정.jpg" alt="main" width="300" />
 
-![gmae](/Docs/gif/game_end.gif)
+- 등록하려는 식재료들을 각각 소비기한을 설정할 수 있음
+
+- 달력을 사용하여 사용자의 편의성을 증가시킴
+
+### 레시피 목록
+
+<img src="Docs/image/레시피 목록.jpg" alt="main" width="300" />
+
+- 사용자들이 등록한 레시피를 최신순으로 확인할 수 있음
+
+### 레시피 검색
+
+<img src="Docs/image/레시피 검색1.jpg" alt="main" width="300" />
+<img src="Docs/image/레시피 검색2.jpg" alt="main" width="300" />
+
+- 가지고 있는 식재료를 목록으로 표시해주고 이 중, 레시피에 꼭 넣고 싶은 식재료를 선택할 수 있음
+
+- 레시피에서 빼고싶은 식재료는 제외 식재료로 등록할 수 있음
+
+- 회원 가입 시 기본적으로 항상 제외할 식재료를 입력 받을 수 있음
+
+### 레시피 조회
+
+<img src="Docs/image/레시피 메인.jpg" alt="main" width="300" />
+<img src="Docs/image/레시피 조리과정.jpg" alt="main" width="300" />
+
+- 레시피를 작성한 사람의 닉네임, 팔로우 수를 확인할 수 있음
+
+- 간단한 레시피의 정보와 필요한 식재료들 확인 가능
+
+- 보유중인 식재료는 파란색으로 표시, 소비기한을 표시하여 적절하게 사용할 수 있도록 유도함
+
+- 조리 과정에 유튜브 링크가 등록이 되어있다면 영상 시청 가능
+
+### 나눔글
+
+<img src="Docs/image/나눔 목록.jpg" alt="main" width="300" />
+<img src="Docs/image/나눔 글.jpg" alt="main" width="300" />
+
+- 지역별로 나눔을 등록한 글을 확인 가능
+
+- 나눔을 하는 물건을 이미지로 확인 가능하고 채팅 신청을 할 수 있음
+
+### 나눔 채팅
+
+<img src="Docs/image/나눔 채팅.jpg" alt="main" width="300" />
+
+- 나눔을 하는사람과 받는사람이 채팅을 통해 약속 장소와 시간을 정함
+
+- 양쪽 모두가 만족한다면 위의 확정 버튼을 통해 수락 가능
+
+- 한명이라도 거절을 선택하면 해당 나눔은 기록되지 않음
+
+### 마이페이지
+
+<img src="Docs/image/마이페이지.jpg" alt="main" width="300" />
+<img src="Docs/image/마이페이지 설정.jpg" alt="main" width="300" />
+
+- 사용자의 프로필과 닉네임 변경 가능
+
+- 즐겨찾기 레시피 목록 확인 가능
+
+- 계정 설정을 통해 내 지역 관리, 제외 식재료 관리 가능
+
+- 계정 우리집 관리를 통해 집 코드를 확인할 수 있고, 이를 공유해 한 집의 식재료를 여러명이 동시에 관리할 수 있음
+
+<br>
 
 # 🛠️개발 환경
 
-#### 💻 **IDE**
-
-    - Intellij
-    - Visual Studio Code
-
-#### 🔧 **Backend**
-
-    - Springboot 2.7.2
-    - Java 11
-    - Gradle 8.2.1
-    - JPA
-    - MySQL 8.1.0
-    - Swagger
-    - WebSocket
-
-#### 🎨 **Frontend**
-
-    - HTML, CSS
-    - JavaScript
-    - Vue 3.2.37
-    - Node.js 16.16.0
-
-#### 🚀 **배포**
-
-    - AWS EC2
-    - Ubuntu 20.04
-    - Jenkins
-    - Docker 20.10.17
-
-#### 📊 **버전/이슈 관리**
-
-    - Jira
-    - GitLab
-
-#### 🔨 **Tool**
-
-    - Postman
-    - Figma
-
-#### 🤝 **협업**
-
-    - Mattermost
-    - Notion
-
-# ✏️프로젝트 회고
-
-### JWT와 Redis의 사용
-
-    - JWT를 DB에 저장하지 않고 Redis에 저장함
-    - 토큰은 발급 후 일정 시간 이후 만료처리 해야하기 때문에 DB에 직접 저장하고 시간이 지나면 삭제하는 과정을 처리하기 위해선 스케줄러를 사용해 주기적으로 처리해야함
-    - Redis는 기본적으로 데이터의 유효 기간을 지정할 수 있기 때문에 토큰 관리에 적합하다고 판단함
-
-### BlackList 사용에 대한 의문
-
-    - 로그아웃을 한 토큰을 구분하기 위해 BlackList로 등록하여 구분함
-    - 이 때, redis에 저장된 토큰을 삭제하는것과 BlackList로 추가 등록하는것의 차이점에 대한 의문이 있었음
-    - 직접 삭제와 블랙리스트 사용의 차이점은 상황에 따라 다르다는 결론을 내림.
-    - 직접 삭제할 때의 장점은 단순성과 blacklist를 추가 조회하지 않기 때문에 성능부분에서 이점이 있음
-    - BlackList를 사용하면 조금 더 높은 보안 수준을 제어하기 위해 사용하며 토큰 체크를 2중으로 한다는 느낌으로 받아드림
-
-### Procedure의 사용에 대한 의문
-
-    - 하나의 요청으로 여러 SQL문을 실행할 수 있기 때문에 네트워크 부하를 줄일 수 있다는 장점때문에 사용함
-    - 그렇다면, 어떤 상황이 Procedure를 사용하기에 적합한지에 대한 의문을 가짐
-    - 이 프로젝트에서 게임이 끝날 때 게임포인트와 랭킹포인트를 반영하는데 있어서 프로시저를 사용함
-    - 게임포인트가 깎여서 음수가 될 경우 0점으로 처리함
-    - 이 때, 이 과정을 Procedure로 등록하여 처리함 => 이 과정을 Procedure에서 처리하는게 과연 올바른 선택인지에 대한 의문을 가짐
-    - 의문에 대한 해소를 하지 못함. 상황에 따라 많은 경우의 수가 있을 수 있음.
-    - 하지만 위의 경우는 백단에서 처리를 한 후 하나의 쿼리 실행으로 변경하는 것이 맞다고 생각을 함 => 한 번의 쿼리 호출로 해결할 수 있기 때문
-
-### 느낀점
-
-    - Infra에 관한 기본 지식이 필요하다는 생각을 함
-    - Ec2 서버를 이용해 배포를 진행하였지만 이 부분에 대한 지식이 많이 부족하여 어려움을 겪음
-    - Docker를 처음 접하면서 기본적인 개념을 이해하는데 도움이 됨
-    - Spring Data JPA를 사용하되 queryDSL을 이용해 동적쿼리를 작성해보는 연습을 해보고싶다고 느낌
-    - JPA의 N+1문제에 대한 이해도가 부족하다는 생각이 들었음. 의도하지 않는 추가적인 데이터 조회를 확인했으나 이를 해결하지 못함. 추후에 공부를 통해 해결해보고 싶음
-    - 이번 프로젝트를 진행하면서 JPA, JWT, Redis, Docker 등 처음 적용해보는 기술들이 많아서, 이를 공부하고 적용해보면서 재미를 느낌. 결과물은 기대에 미치지 못했지만 개인적으론 많은 성장을 하게 된 프로젝트라고 생각함
-
-# 👨‍👨‍👦‍👧멤버 구성
-
-|                                김석주                                 |                                박예한                                 |                                옥수빈                                 |                                왕준영                                 |                                이주용                                 |                                임휘진                                 |
-| :-------------------------------------------------------------------: | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: |
-| <img src="Docs/image/김석주.jpg" width="80px;" height="80px" alt=""/> | <img src="Docs/image/박예한.jpg" width="80px;" height="80px" alt=""/> | <img src="Docs/image/옥수빈.jpg" width="80px;" height="80px" alt=""/> | <img src="Docs/image/왕준영.jpg" width="80px;" height="80px" alt=""/> | <img src="Docs/image/이주용.jpg" width="80px;" height="80px" alt=""/> | <img src="Docs/image/임휘진.png" width="80px;" height="80px" alt=""/> |
-|                        Back-end<br/>Api Server                        |                        Back-end<br/>Infra<br/>                        |                            Front-end<br/>                             |                        Back-end<br/>Game Sever                        |                            Front-end<br/>                             |                            Front-end<br/>                             |
-
-<br/>
-
-## SSAFY 9기 특화 프로젝트
-
-# 좋은 냉장고, 신선한 나눔 - 좋냉신나
-
-- 냉장고 식자재 관리 및 나눔 서비스
-- [apk 다운로드](https://1drv.ms/u/s!AkrJpxi-ZmutiPNutUjyN42GvDJ0_A?e=c2RFwU)
-  <img src="screenshots/Screenshot_20231006-113354_좋냉신나.png" width="250"/>
-
-## 팀원 소개
-
-| NAME   | ROLE                | EMAIL                    |
-| ------ | ------------------- | ------------------------ |
-| 김석주 | Leader, Backend     | tjrwn1247@naver.com      |
-| 김수현 | Backend             | ppsracchriskim@gmail.com |
-| 곽민규 | Frontend, Backend   | tngks1995@naver.com      |
-| 금세현 | Backend, BlockChain | shkum0330@gmail.com      |
-| 왕준영 | Backend, Infra      | wangsun7@naver.com       |
-| 윤태영 | Frontend            | yyytae0@gmail.com        |
-
-## 기획 배경
-
-### 1. 기존 냉장고 관리 어플리케이션의 한계
-
-- 기존의 냉장고 관리 어플리케이션은 식재료 등록이 번거롭고, 적절한 활용처를 제공해주지 않음
-
-### 2. 여러 명이 한 냉장고를 사용할 때의 어려움
-
-- 가구 구성원끼리 냉장고를 공유하는 경우 정확한 식재료 파악이 어려움
-
-### 3. 소비 패턴의 변화와 그에 따른 식재료 폐기 증가
-
-- 가구 구성원 수가 줄어들고 배달 문화가 발달하면서, 소비기한 내에 먹지 못하고 폐기되는 식재료의 양이 증가함
-
-## 기능
-
-### 레시피 추천 & 소비기한 임박 재료 알림
-
-<img src="screenshots/Screenshot_20231006-113415_좋냉신나.png" width="250"/>
-
-### 레시피 상세 검색
-
-<img src="screenshots/Screenshot_20231006-113422_좋냉신나.png" width="250"/>
-
-### 남는 식재료 나눔
-
-<img src="screenshots/Screenshot_20231006-113502_좋냉신나.png" width="250"/>
-
-### 식재료 자동완성/OCR/STT 일괄 등록
-
-<img src="screenshots/Screenshot_20231006-113645_좋냉신나.png" width="250"/>
-
-## 개발 환경 및 IDE
-
 ### FrontEnd
 
-> ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-> ![Node.js](https://camo.githubusercontent.com/ab61fce6586c27e04d8ac35d0a77a20b78eb57de63ac2243353f23d3752b1fc3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d3333393933333f7374796c653d666f722d7468652d6261646765266c6f676f3d4e6f64652e6a73266c6f676f436f6c6f723d7768697465)
-> ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-> ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-> ![IntelliJ](https://camo.githubusercontent.com/d479352761a86806b779129f4be8909d1c8c1fb1e2805bbd86cacd276f831cfa/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f496e74656c6c696a5f494445412d3337373641423f7374796c653d666f722d7468652d6261646765266c6f676f3d496e74656c6c696a49444541266c6f676f436f6c6f723d7768697465)
-> ![Android Studio](https://img.shields.io/badge/Android_Studio-%232022a.svg?style=for-the-badge&logo=androidstudio&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Node.js](https://camo.githubusercontent.com/ab61fce6586c27e04d8ac35d0a77a20b78eb57de63ac2243353f23d3752b1fc3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d3333393933333f7374796c653d666f722d7468652d6261646765266c6f676f3d4e6f64652e6a73266c6f676f436f6c6f723d7768697465)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![IntelliJ](https://camo.githubusercontent.com/d479352761a86806b779129f4be8909d1c8c1fb1e2805bbd86cacd276f831cfa/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f496e74656c6c696a5f494445412d3337373641423f7374796c653d666f722d7468652d6261646765266c6f676f3d496e74656c6c696a49444541266c6f676f436f6c6f723d7768697465)
+![Android Studio](https://img.shields.io/badge/Android_Studio-%232022a.svg?style=for-the-badge&logo=androidstudio&logoColor=white)
 
 ### BackEnd
 
-> ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-> ![Spring Boot](https://camo.githubusercontent.com/d04cac57f1f6d0a39ebd084333a6e4d93081a42c9e5aa1b3b511e75ad1a1e20f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f537072696e675f426f6f742d3644423333463f7374796c653d666f722d7468652d6261646765266c6f676f3d537072696e67426f6f74266c6f676f436f6c6f723d7768697465)
-> ![Gradle](https://camo.githubusercontent.com/ce0bfcaef68659861b497d6dfc5b8b783c2955705472b4e55151f196347d9271/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f477261646c652d4633373434303f7374796c653d666f722d7468652d6261646765266c6f676f3d477261646c65266c6f676f436f6c6f723d7768697465)
-> ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?&style=for-the-badge&logo=mysql&logoColor=white)
-> ![Redis](https://img.shields.io/badge/redis-DC382D.svg?&style=for-the-badge&logo=redis&logoColor=white)
-> ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
-
-### BlockChain
-
-> ![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D6?style=for-the-badge&logo=ethereum&logoColor=white)
-> ![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://camo.githubusercontent.com/d04cac57f1f6d0a39ebd084333a6e4d93081a42c9e5aa1b3b511e75ad1a1e20f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f537072696e675f426f6f742d3644423333463f7374796c653d666f722d7468652d6261646765266c6f676f3d537072696e67426f6f74266c6f676f436f6c6f723d7768697465)
+![Gradle](https://camo.githubusercontent.com/ce0bfcaef68659861b497d6dfc5b8b783c2955705472b4e55151f196347d9271/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f477261646c652d4633373434303f7374796c653d666f722d7468652d6261646765266c6f676f3d477261646c65266c6f676f436f6c6f723d7768697465)
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?&style=for-the-badge&logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-DC382D.svg?&style=for-the-badge&logo=redis&logoColor=white)
+![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
 
 ### Infra
 
-> ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
-> ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
-> ![CloudFlare CDN](https://img.shields.io/badge/cloudflare-%23F38020.svg?&style=for-the-badge&logo=cloudflare&logoColor=white)
-> ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-> ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-> ![Jenkins](https://camo.githubusercontent.com/9cadc6063746e385b3916ea6ee991ec8eea88306de9208ccf5a94111c0ddf6ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a656e6b696e732d4432343933393f7374796c653d666f722d7468652d6261646765266c6f676f3d4a656e6b696e73266c6f676f436f6c6f723d7768697465)
-> ![RabbitMQ](https://img.shields.io/badge/rabbitmq-FF6600.svg?style=for-the-badge&logo=rabbitmq&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![CloudFlare CDN](https://img.shields.io/badge/cloudflare-%23F38020.svg?&style=for-the-badge&logo=cloudflare&logoColor=white)
+![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Jenkins](https://camo.githubusercontent.com/9cadc6063746e385b3916ea6ee991ec8eea88306de9208ccf5a94111c0ddf6ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a656e6b696e732d4432343933393f7374796c653d666f722d7468652d6261646765266c6f676f3d4a656e6b696e73266c6f676f436f6c6f723d7768697465)
+![RabbitMQ](https://img.shields.io/badge/rabbitmq-FF6600.svg?style=for-the-badge&logo=rabbitmq&logoColor=white)
 
 ### Development Tool
 
@@ -350,20 +270,42 @@
 
 ### Communication Tool
 
-> ![Mattermost](https://camo.githubusercontent.com/04ce7d705b23f2f899a4acd58de46152ea9ab352ce310182432c59db1bd3e74e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d61747465724d4f53542d3030393638383f7374796c653d666f722d7468652d6261646765266c6f676f3d4d61747465726d6f7374266c6f676f436f6c6f723d7768697465)
-> ![Jira](https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white)
-> ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-> ![GitLab](https://camo.githubusercontent.com/cb99570e6da369466c9991c5400a2516cec86a958fc80bc152dcdc020b5e581f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6769746c61622d4643364432363f7374796c653d666f722d7468652d6261646765266c6f676f3d4769744c6162266c6f676f436f6c6f723d7768697465)
-> ![Notion](https://camo.githubusercontent.com/e6016a8747f69a4f7c5cac44f04f81136a1294f2973f25a8d4c53651337a3d78/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f74696f6e2d4546313937303f7374796c653d666f722d7468652d6261646765266c6f676f3d4e6f74696f6e266c6f676f436f6c6f723d7768697465)
-> ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Mattermost](https://camo.githubusercontent.com/04ce7d705b23f2f899a4acd58de46152ea9ab352ce310182432c59db1bd3e74e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d61747465724d4f53542d3030393638383f7374796c653d666f722d7468652d6261646765266c6f676f3d4d61747465726d6f7374266c6f676f436f6c6f723d7768697465)
+![Jira](https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitLab](https://camo.githubusercontent.com/cb99570e6da369466c9991c5400a2516cec86a958fc80bc152dcdc020b5e581f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6769746c61622d4643364432363f7374796c653d666f722d7468652d6261646765266c6f676f3d4769744c6162266c6f676f436f6c6f723d7768697465)
+![Notion](https://camo.githubusercontent.com/e6016a8747f69a4f7c5cac44f04f81136a1294f2973f25a8d4c53651337a3d78/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f74696f6e2d4546313937303f7374796c653d666f722d7468652d6261646765266c6f676f3d4e6f74696f6e266c6f676f436f6c6f723d7768697465)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
-## 설계 및 산출물
+<br>
 
-- [요구사항 정의서](https://www.notion.so/b5cda16927484ff18de603dc57afffab?pvs=4)
-- [와이어 프레임](https://www.figma.com/file/Zbq5uxPolrcGTBqj0YG5mu/%ED%99%98%EA%B2%BD%EB%B3%B4%ED%98%B8%EB%B2%94?type=design&node-id=0%3A1&mode=design&t=awZIiBr4fW0UVzbh-1)
-- [ER 다이어그램](https://www.erdcloud.com/d/Qj7WevNawY3xH7A6c)
-- [Git 컨벤션](https://www.notion.so/Git-Convention-31914546aa48442a8029846da66f6e53?pvs=4)
-- [Jira 컨벤션](https://www.notion.so/Jira-Convention-9c3867d7c3be4498a53076b61ffee740?pvs=4)
-- [API 명세서 및 역할 분담](https://www.notion.so/API-cf4ac4b5bff54b09afc6dc7027fa9fee?pvs=4)
-- [트랜잭션 플로우](https://www.notion.so/1f517b2def874d26be277dbb7f783f2c?pvs=4)
-- [시스템 아키텍처](https://www.notion.so/1c8235f7857a4776863019086fa9a8b7?pvs=4)
+# ✏️프로젝트 회고
+
+### MSA의 도입
+
+    -
+
+### S3 이미지 등록
+
+    -
+
+### 코드 컨벤션의 필요성
+
+    -
+
+### 느낀점
+
+    -
+
+<br>
+
+# 👨‍👨‍👦‍👧멤버 구성
+
+|                                                김석주                                                |                                               김수현                                               |                                               곽민규                                               |                                                금세현                                                 |                                              왕준영                                               |                                               윤태영                                                |
+| :--------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
+| [<img src="Docs/image/김석주.png" width="80px;" height="80px" alt=""/>](https://github.com/seokJKIM) | [<img src="Docs/image/김수현.png" width="80px;" height="80px" alt=""/>](https://github.com/ppsrac) | [<img src="Docs/image/곽민규.png" width="80px;" height="80px" alt=""/>](https://github.com/RookMG) | [<img src="Docs/image/금세현.png" width="80px;" height="80px" alt=""/>](https://github.com/shkum0330) | [<img src="Docs/image/왕준영.png" width="80px;" height="80px" alt=""/>](https://github.com/wjy35) | [<img src="Docs/image/윤태영.png" width="80px;" height="80px" alt=""/>](https://github.com/yyytae0) |
+|                                       Leader<br/>Back-end<br/>                                       |                                           Back-end<br/>                                            |                                    Back-end<br/>Front-end<br/>                                     |                                             Back-end<br/>                                             |                                        Back-end<br/>Infra                                         |                                           Front-end<br/>                                            |
+
+|
+
+<br/>
