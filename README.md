@@ -119,9 +119,7 @@
 
 ### 냉장고
 
-<img src="Docs/image/냉장고.jpg" alt="main" width="300" />
-
-<img src="Docs/image/소비기한 표시.jpg" alt="main" width="300" />
+<img src="Docs/image/냉장고.jpg" alt="main" width="300" /> <img src="Docs/image/소비기한 표시.jpg" alt="main" width="300" />
 
 - 보유하고 있는 식재료를 냉동, 냉장, 상온에 맞춰 표시해줌
 
@@ -133,8 +131,7 @@
 
 ### 식재료 등록
 
-<img src="Docs/image/재료 추가.jpg" alt="main" width="300" />
-<img src="Docs/image/재료 추가 자동완성.jpg" alt="main" width="300" />
+<img src="Docs/image/재료 추가.jpg" alt="main" width="300" /> <img src="Docs/image/재료 추가 자동완성.jpg" alt="main" width="300" />
 
 - 식재료 등록 시 텍스트를 입력하면 관리할 수 있는 식재료들의 목록을 자동완성할 수 있음
 
@@ -176,8 +173,7 @@
 
 ### 레시피 검색
 
-<img src="Docs/image/레시피 검색1.jpg" alt="main" width="300" />
-<img src="Docs/image/레시피 검색2.jpg" alt="main" width="300" />
+<img src="Docs/image/레시피 검색1.jpg" alt="main" width="300" /> <img src="Docs/image/레시피 검색2.jpg" alt="main" width="300" />
 
 - 가지고 있는 식재료를 목록으로 표시해주고 이 중, 레시피에 꼭 넣고 싶은 식재료를 선택할 수 있음
 
@@ -187,8 +183,7 @@
 
 ### 레시피 조회
 
-<img src="Docs/image/레시피 메인.jpg" alt="main" width="300" />
-<img src="Docs/image/레시피 조리과정.jpg" alt="main" width="300" />
+<img src="Docs/image/레시피 메인.jpg" alt="main" width="300" /> <img src="Docs/image/레시피 조리과정.jpg" alt="main" width="300" />
 
 - 레시피를 작성한 사람의 닉네임, 팔로우 수를 확인할 수 있음
 
@@ -200,8 +195,7 @@
 
 ### 나눔글
 
-<img src="Docs/image/나눔 목록.jpg" alt="main" width="300" />
-<img src="Docs/image/나눔 글.jpg" alt="main" width="300" />
+<img src="Docs/image/나눔 목록.jpg" alt="main" width="300" /> <img src="Docs/image/나눔 글.jpg" alt="main" width="300" />
 
 - 지역별로 나눔을 등록한 글을 확인 가능
 
@@ -219,8 +213,7 @@
 
 ### 마이페이지
 
-<img src="Docs/image/마이페이지.jpg" alt="main" width="300" />
-<img src="Docs/image/마이페이지 설정.jpg" alt="main" width="300" />
+<img src="Docs/image/마이페이지.jpg" alt="main" width="300" /> <img src="Docs/image/마이페이지 설정.jpg" alt="main" width="300" />
 
 - 사용자의 프로필과 닉네임 변경 가능
 
