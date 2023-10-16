@@ -103,6 +103,8 @@
 
 ### 시연 영상
 
+[시연 링크](https://youtu.be/7mzxma4tlZc)
+
 ### 로그인
 
 <img src="Docs/image/home.jpg" alt="home" width="300" />
